@@ -1,0 +1,16 @@
+tab:unnamed-chunk-8
+my-portofolio
+introduction
+c.-elegans-plate-experiment-analysis
+introduction-1
+analyzing-plan
+open-peer-review
+introduction-2
+clarification
+the-second-peer-review
+the-guerrila-structure
+why-organizing-data
+western-blot-analysis-using-rstudio
+introduction-3
+planning
+my-cv
