@@ -218,7 +218,7 @@ The colomn ‘compConcentration’ is a “chr” type, this is not correct sinc
 <span id="cb4-3"><a href="c.-elegans-plate-experiment-analysis.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> compConcentration, <span class="at">y =</span> RawData )) <span class="sc">+</span></span>
 <span id="cb4-4"><a href="c.-elegans-plate-experiment-analysis.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> compName, </span>
 <span id="cb4-5"><a href="c.-elegans-plate-experiment-analysis.html#cb4-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">shape =</span> expType)) <span class="co">#scatterplot for the different compounds and the varying concentrations</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/wrongplot-1.png" width="672" /></p>
 <p>We just made a scatterplot with the data from the excel file we imported earlier. Each compName has its own colour and each expType has its own shape, but we see one big problem. As we can see is the x-axis not very readable, actually not at all!</p>
 <p>when we imported the Excel file, the colomn ‘compConcentration’ had a charachter type. Because of this every single charachter in each cell was shown on the x-axis and the numbers weren’t rounded. This explains why the x-axis wasn’t readable.</p>
 <p>To correct this mistake, we’re gonna change the type of the colomn “compConcentration” from “chr” to “dbl”.</p>
@@ -234,7 +234,7 @@ The colomn ‘compConcentration’ is a “chr” type, this is not correct sinc
 <span id="cb5-10"><a href="c.-elegans-plate-experiment-analysis.html#cb5-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Rawdata&quot;</span>,</span>
 <span id="cb5-11"><a href="c.-elegans-plate-experiment-analysis.html#cb5-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;compConcentration(nM)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb5-12"><a href="c.-elegans-plate-experiment-analysis.html#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="co">#scatterplot of the data with fixed x-axis and jitter</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/fixingplot-1.png" width="672" /></p>
 <p>As we van see the x-axis is now readable.</p>
 <p>We see in the scatterplot that the positive control for this experiments is Ethanol. The negative control for this experiment is S-medium.</p>
 <p>if we really want to compare the different between the compund and experiments type. We need to normalize the data for the Negative control. We normalize the data by setting the mean value for the “controlNegative” to 1. All the other values are expressed as a fraction thereof.</p>
@@ -254,7 +254,7 @@ The colomn ‘compConcentration’ is a “chr” type, this is not correct sinc
 <span id="cb6-14"><a href="c.-elegans-plate-experiment-analysis.html#cb6-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Rawdata normalized&quot;</span>,</span>
 <span id="cb6-15"><a href="c.-elegans-plate-experiment-analysis.html#cb6-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;compConcentration(nM)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb6-16"><a href="c.-elegans-plate-experiment-analysis.html#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="co">#scatterplot of the data with fixed x-axis and jitter</span></span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/fixedplot-1.png" width="672" /></p>
 <p>In the dataset we used for this analysis, each compound has his own concentrations. If we want make the data more comparable we have to normalize the data.</p>
 </div>
 <div id="analyzing-plan" class="section level2 hasAnchor" number="2.2">
