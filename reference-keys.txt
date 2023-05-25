@@ -1,6 +1,7 @@
-tab:unnamed-chunk-5
-my-portofolio
+tab:unnamed-chunk-3
+my-portfolio
 introduction
+my-curriculum-vitae
 c.-elegans-plate-experiment-analysis
 introduction-1
 analyzing-plan
@@ -13,4 +14,4 @@ why-organizing-data
 western-blot-analysis-using-rstudio
 introduction-3
 planning
-my-cv
+relational-databases
