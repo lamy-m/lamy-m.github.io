@@ -4,26 +4,26 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 2 C. elegans plate experiment analysis | Welcome to my portofolio</title>
-  <meta name="description" content="This is my portofolio where i show my skills." />
+  <title>2 C. elegans plate experiment analysis | Welcome to my portfolio</title>
+  <meta name="description" content="2 C. elegans plate experiment analysis | Welcome to my portfolio" />
   <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 2 C. elegans plate experiment analysis | Welcome to my portofolio" />
+  <meta property="og:title" content="2 C. elegans plate experiment analysis | Welcome to my portfolio" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="This is my portofolio where i show my skills." />
-  <meta name="github-repo" content="rstudio/bookdown-demo" />
+  
+  
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 C. elegans plate experiment analysis | Welcome to my portofolio" />
+  <meta name="twitter:title" content="2 C. elegans plate experiment analysis | Welcome to my portfolio" />
   
-  <meta name="twitter:description" content="This is my portofolio where i show my skills." />
+  
   
 
 <meta name="author" content="Lamyae el Mahboud" />
 
 
-<meta name="date" content="2023-05-15" />
+<meta name="date" content="2023-05-25" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -140,9 +140,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> My portofolio</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> My portfolio</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#introduction"><i class="fa fa-check"></i><b>1.1</b> introduction</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#my-curriculum-vitae"><i class="fa fa-check"></i><b>1.2</b> My curriculum vitae</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="c.-elegans-plate-experiment-analysis.html"><a href="c.-elegans-plate-experiment-analysis.html"><i class="fa fa-check"></i><b>2</b> C. elegans plate experiment analysis</a>
 <ul>
@@ -164,7 +165,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
 <li class="chapter" data-level="5.2" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#planning"><i class="fa fa-check"></i><b>5.2</b> planning</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="my-cv.html"><a href="my-cv.html"><i class="fa fa-check"></i><b>6</b> My CV</a></li>
+<li class="chapter" data-level="6" data-path="relational-databases.html"><a href="relational-databases.html"><i class="fa fa-check"></i><b>6</b> Relational databases</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -177,7 +178,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Welcome to my portofolio</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Welcome to my portfolio</a>
           </h1>
         </div>
 
@@ -186,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="c.-elegans-plate-experiment-analysis" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapter 2</span> C. elegans plate experiment analysis<a href="c.-elegans-plate-experiment-analysis.html#c.-elegans-plate-experiment-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">2</span> C. elegans plate experiment analysis<a href="c.-elegans-plate-experiment-analysis.html#c.-elegans-plate-experiment-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="introduction-1" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Introduction<a href="c.-elegans-plate-experiment-analysis.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In this exercise we will read and analyze a data file. While analyzing the data we come across a few issues we try to fix. The data we’re gonna use in this exercise was derived from an experiment in which adult C.elegans were exposed to varying concentrations of different compounds. The variables RawData (the outcome - number of offspring counted as an integer value, after incubation time), compName (the generic name of the compound/chemical), the compConcentration (the concentration of the compound), and the expType are the most important variables in this dataset.</p>
@@ -197,7 +198,7 @@ Some data in colomn is the same for all coditions, like ‘compDelivery’ and �
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="c.-elegans-plate-experiment-analysis.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#load in tidyverse package</span></span>
 <span id="cb1-2"><a href="c.-elegans-plate-experiment-analysis.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl) <span class="co">#load in readxl package </span></span>
 <span id="cb1-3"><a href="c.-elegans-plate-experiment-analysis.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="c.-elegans-plate-experiment-analysis.html#cb1-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;CE.LIQ.FLOW.062_Tidydata.xlsx&quot;</span>) <span class="co">#load in the data that we want to use for this assignment</span></span></code></pre></div>
+<span id="cb1-4"><a href="c.-elegans-plate-experiment-analysis.html#cb1-4" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">&quot;data/CE.LIQ.FLOW.062_Tidydata.xlsx&quot;</span>) <span class="co">#load in the data that we want to use for this assignment</span></span></code></pre></div>
 <p>Before we go ahead an start analyzing our data. We’re gonna inspect the following colomns: “Rawdata”, “compName” and “compConcentration”</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="c.-elegans-plate-experiment-analysis.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data[<span class="fu">c</span>(<span class="st">&#39;RawData&#39;</span>, <span class="st">&#39;compName&#39;</span>, <span class="st">&#39;compConcentration&#39;</span>)]) <span class="co">#we want to see the first few lines of the colomns RawData compName and compConcentration</span></span></code></pre></div>
 <pre><code>## # A tibble: 6 × 3
@@ -304,7 +305,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-plate_experiment.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/002-plate_experiment.Rmd",
 "text": "Edit"
 },
 "history": {
