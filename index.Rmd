@@ -1,0 +1,32 @@
+--- 
+title: " Welcome to my portfolio"
+author: "Lamyae el Mahboud"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+link-citations: yes
+new_session: yes 
+---
+
+
+# My portfolio
+
+## introduction 
+
+Welcome to my portofolio. My name is Lamyae el Mahboud and im studying at the Utrecht University of Applied Sciences. 
+
+In this github page you'll find different skills.
+
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+## My curriculum vitae
+
+To get me know a little better, i'll show you my CV i made with Rstudio. 
