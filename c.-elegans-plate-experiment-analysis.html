@@ -23,7 +23,7 @@
 <meta name="author" content="Lamyae el Mahboud" />
 
 
-<meta name="date" content="2023-05-25" />
+<meta name="date" content="2023-05-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -165,7 +165,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.1" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
 <li class="chapter" data-level="5.2" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#planning"><i class="fa fa-check"></i><b>5.2</b> planning</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="relational-databases.html"><a href="relational-databases.html"><i class="fa fa-check"></i><b>6</b> Relational databases</a></li>
+<li class="chapter" data-level="6" data-path="relational-databases.html"><a href="relational-databases.html"><i class="fa fa-check"></i><b>6</b> Relational databases</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="relational-databases.html"><a href="relational-databases.html#why-using-relational-databses"><i class="fa fa-check"></i><b>6.1</b> Why using relational databses</a></li>
+<li class="chapter" data-level="6.2" data-path="relational-databases.html"><a href="relational-databases.html#the-database"><i class="fa fa-check"></i><b>6.2</b> The database</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="parameters-and-presentations.html"><a href="parameters-and-presentations.html"><i class="fa fa-check"></i><b>7</b> Parameters and Presentations</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="parameters-and-presentations.html"><a href="parameters-and-presentations.html#why-using-parameters"><i class="fa fa-check"></i><b>7.1</b> Why using parameters?</a></li>
+<li class="chapter" data-level="7.2" data-path="parameters-and-presentations.html"><a href="parameters-and-presentations.html#the-report"><i class="fa fa-check"></i><b>7.2</b> The report</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -190,11 +199,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">2</span> C. elegans plate experiment analysis<a href="c.-elegans-plate-experiment-analysis.html#c.-elegans-plate-experiment-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="introduction-1" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Introduction<a href="c.-elegans-plate-experiment-analysis.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this exercise we will read and analyze a data file. While analyzing the data we come across a few issues we try to fix. The data we’re gonna use in this exercise was derived from an experiment in which adult C.elegans were exposed to varying concentrations of different compounds. The variables RawData (the outcome - number of offspring counted as an integer value, after incubation time), compName (the generic name of the compound/chemical), the compConcentration (the concentration of the compound), and the expType are the most important variables in this dataset.</p>
+<p>In this analyse we will read and analyze a data file. While analyzing the data file, we come across a few issues we try to fix. The data we’re gonna use in this exercise was obtained from an experiment in which adult C.elegans were exposed to varying concentrations of different compounds. The variables RawData (the outcome - number of offspring counted as an integer value, after incubation time), compName (the generic name of the compound/chemical), the compConcentration (the concentration of the compound), and the expType are the most important variables in this dataset.</p>
 <p>After we reviewed the Excel File. We see in the Excel file that there is no data in the colomns ‘plateRow’ en ‘plateColmn’.
-Some colomns arent nesecerasy like ‘expDate’, ‘expResearcher’, ‘expTime’, ‘éxpUnit’. This kind of information is metadata and should not be in your rawdata. It makes the table cluttered and information less easy to find.
-Some data in colomn is the same for all coditions, like ‘compDelivery’ and ‘bacterialStrain’. This kind of information is metadata and shouldn’t be in your table.</p>
-<p>after reviewing the file we want to open the excel file in R using the {readxl} package.</p>
+Some colomns are not necessary like ‘expDate’, ‘expResearcher’, ‘expTime’, ‘éxpUnit’. This kind of information is metadata and should not be in your raw data file. It makes the table cluttered and information less easy to find.
+Some data in colomn is the same for all coditions, like ‘compDelivery’ and ‘bacterialStrain’. This kind of information could be mentioned in your metadata to make your datafile more readable and less chaotic.</p>
+<p>after reviewing the file we want to open the excel file in R using the <code>{readxl}</code> package.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="c.-elegans-plate-experiment-analysis.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#load in tidyverse package</span></span>
 <span id="cb1-2"><a href="c.-elegans-plate-experiment-analysis.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl) <span class="co">#load in readxl package </span></span>
 <span id="cb1-3"><a href="c.-elegans-plate-experiment-analysis.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -210,15 +219,20 @@ Some data in colomn is the same for all coditions, like ‘compDelivery’ and �
 ## 4      47 2,6-diisopropylnaphthalene 4.99             
 ## 5      41 2,6-diisopropylnaphthalene 4.99             
 ## 6      35 2,6-diisopropylnaphthalene 4.99</code></pre>
-<p>The colomn ‘Rawdata’ is a “dbl” type, this is what we expected.
+<p>The colomn ‘Rawdata’ is a <code>dbl</code> type colomn, this is what we expected.
 The colomn ‘compName’ is a “chr” type, this is what we expected .
 The colomn ‘compConcentration’ is a “chr” type, this is not correct since they are only numbers in the colomn.</p>
-<p>We’re gonna make a scatterplot for the data. As you can see in the code below we put the “compConcentration” on the x-axis, the “Rawdata” counts on the y-axis. For each level in “compName” we assign a colour and for each level in “expType” we assign a different symbol.</p>
+<p>We’re gonna make a scatterplot of the dataset
+. As you can see in the code below we put the “compConcentration” on the x-axis, the “Rawdata” counts on the y-axis. For each level in “compName” we assign a colour and for each level in “expType” we assign a different symbol.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="c.-elegans-plate-experiment-analysis.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#load in the tidyverse data</span></span>
 <span id="cb4-2"><a href="c.-elegans-plate-experiment-analysis.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="c.-elegans-plate-experiment-analysis.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> compConcentration, <span class="at">y =</span> RawData )) <span class="sc">+</span></span>
 <span id="cb4-4"><a href="c.-elegans-plate-experiment-analysis.html#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> compName, </span>
-<span id="cb4-5"><a href="c.-elegans-plate-experiment-analysis.html#cb4-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">shape =</span> expType)) <span class="co">#scatterplot for the different compounds and the varying concentrations</span></span></code></pre></div>
+<span id="cb4-5"><a href="c.-elegans-plate-experiment-analysis.html#cb4-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">shape =</span> expType))  <span class="sc">+</span></span>
+<span id="cb4-6"><a href="c.-elegans-plate-experiment-analysis.html#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Rawdata of each compName and their expType&quot;</span>,</span>
+<span id="cb4-7"><a href="c.-elegans-plate-experiment-analysis.html#cb4-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Rawdata&quot;</span>,</span>
+<span id="cb4-8"><a href="c.-elegans-plate-experiment-analysis.html#cb4-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;compConcentration(nM)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="c.-elegans-plate-experiment-analysis.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="co">#scatterplot for the different compounds and the varying concentrations in nM</span></span></code></pre></div>
 <p><img src="_main_files/figure-html/wrongplot-1.png" width="672" /></p>
 <p>We just made a scatterplot with the data from the excel file we imported earlier. Each compName has its own colour and each expType has its own shape, but we see one big problem. As we can see is the x-axis not very readable, actually not at all!</p>
 <p>when we imported the Excel file, the colomn ‘compConcentration’ had a charachter type. Because of this every single charachter in each cell was shown on the x-axis and the numbers weren’t rounded. This explains why the x-axis wasn’t readable.</p>
@@ -256,15 +270,14 @@ The colomn ‘compConcentration’ is a “chr” type, this is not correct sinc
 <span id="cb6-15"><a href="c.-elegans-plate-experiment-analysis.html#cb6-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;compConcentration(nM)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb6-16"><a href="c.-elegans-plate-experiment-analysis.html#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="co">#scatterplot of the data with fixed x-axis and jitter</span></span></code></pre></div>
 <p><img src="_main_files/figure-html/fixedplot-1.png" width="672" /></p>
-<p>In the dataset we used for this analysis, each compound has his own concentrations. If we want make the data more comparable we have to normalize the data.</p>
+<p>When we look at the scatterplot we just made, we can that napthalene gets lower when we rise the concentrtion. The same happends with decane and 2,6-diisopropylnaphthalene. To draw a conclusion we need to conduct further analysis.</p>
 </div>
 <div id="analyzing-plan" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> analyzing plan<a href="c.-elegans-plate-experiment-analysis.html#analyzing-plan" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If we want to analyze the data to learn whether there is indeed an effect of different concentrations on offspring count and whether the different compounds have a different curve(ic50), First we need to get the data and prepare it. We did this already as you can see above.</p>
 <p>after preparing the data we will perform the shapiro.test for every compound to check if the data (Rawdata) is normally distributed. All compounds need to have a p-value greater than 0.05.</p>
-<p>To test if there is a significant difference between compound concentrations we can use the one sample t-test for each compound individually. To do this we have to filter the table for the compound we want to test first before we perform the test.</p>
-<p>To compare the IC50 of each compound we can use the
-{drc} package to visualize the different curves for each compound.</p>
+<p>To test if there is a significant difference between compound concentrations we can use the one-sided t-test for each compound individually, but before we use the one sample t-test we need to check the variances in the group since the data is unpaired.</p>
+<p>To compare the IC50 of each compound we can use the <code>{drc}</code> package to visualize the different curves for each compound.</p>
 
 </div>
 </div>

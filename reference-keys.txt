@@ -15,3 +15,8 @@ western-blot-analysis-using-rstudio
 introduction-3
 planning
 relational-databases
+why-using-relational-databses
+the-database
+parameters-and-presentations
+why-using-parameters
+the-report
