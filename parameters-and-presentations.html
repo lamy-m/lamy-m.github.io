@@ -23,7 +23,7 @@
 <meta name="author" content="Lamyae el Mahboud" />
 
 
-<meta name="date" content="2023-05-30" />
+<meta name="date" content="2023-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="relational-databases.html"/>
-
+<link rel="next" href="rpackage-lamyflow.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -123,6 +123,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -164,16 +186,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
 <li class="chapter" data-level="5.2" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#planning"><i class="fa fa-check"></i><b>5.2</b> planning</a></li>
+<li class="chapter" data-level="5.3" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#gel-analysis-and-r"><i class="fa fa-check"></i><b>5.3</b> Gel analysis and R</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="relational-databases.html"><a href="relational-databases.html"><i class="fa fa-check"></i><b>6</b> Relational databases</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="relational-databases.html"><a href="relational-databases.html#why-using-relational-databses"><i class="fa fa-check"></i><b>6.1</b> Why using relational databses</a></li>
+<li class="chapter" data-level="6.1" data-path="relational-databases.html"><a href="relational-databases.html#why-using-relational-databases"><i class="fa fa-check"></i><b>6.1</b> Why using relational databases?</a></li>
 <li class="chapter" data-level="6.2" data-path="relational-databases.html"><a href="relational-databases.html#the-database"><i class="fa fa-check"></i><b>6.2</b> The database</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="parameters-and-presentations.html"><a href="parameters-and-presentations.html"><i class="fa fa-check"></i><b>7</b> Parameters and Presentations</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="parameters-and-presentations.html"><a href="parameters-and-presentations.html#why-using-parameters"><i class="fa fa-check"></i><b>7.1</b> Why using parameters?</a></li>
 <li class="chapter" data-level="7.2" data-path="parameters-and-presentations.html"><a href="parameters-and-presentations.html#the-report"><i class="fa fa-check"></i><b>7.2</b> The report</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html"><i class="fa fa-check"></i><b>8</b> Rpackage: lamyflow</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#why-building-this-rpackage"><i class="fa fa-check"></i><b>8.1</b> Why building this Rpackage?</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="antimicrobial-resistance-amr.html"><a href="antimicrobial-resistance-amr.html"><i class="fa fa-check"></i><b>9</b> Antimicrobial resistance (AMR)</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="antimicrobial-resistance-amr.html"><a href="antimicrobial-resistance-amr.html#introduction-4"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>10</b> Resources</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="resources.html"><a href="resources.html#youtube-resources"><i class="fa fa-check"></i><b>10.1</b> Youtube resources</a></li>
+<li class="chapter" data-level="10.2" data-path="resources.html"><a href="resources.html#references"><i class="fa fa-check"></i><b>10.2</b> References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -207,7 +243,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We first need the import the data we’re gonna use for this report.</p>
 <div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="parameters-and-presentations.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb61-2"><a href="parameters-and-presentations.html#cb61-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-3"><a href="parameters-and-presentations.html#cb61-3" aria-hidden="true" tabindex="-1"></a>EDCC_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/data.csv&quot;</span>) <span class="co">#importing dataset </span></span>
+<span id="cb61-3"><a href="parameters-and-presentations.html#cb61-3" aria-hidden="true" tabindex="-1"></a>EDCC_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/edcc_data.csv&quot;</span>) <span class="co">#importing dataset </span></span>
 <span id="cb61-4"><a href="parameters-and-presentations.html#cb61-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb61-5"><a href="parameters-and-presentations.html#cb61-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(EDCC_data) <span class="co">#checking if data is imported correctly </span></span></code></pre></div>
 <pre><code>##      dateRep day month year cases deaths countriesAndTerritories geoId
@@ -265,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb66-6"><a href="parameters-and-presentations.html#cb66-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;COVID-19 cases in September in 2021 in The Netherlands&quot;</span>, </span>
 <span id="cb66-7"><a href="parameters-and-presentations.html#cb66-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of COVID-19 cases&quot;</span>, </span>
 <span id="cb66-8"><a href="parameters-and-presentations.html#cb66-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Day in September&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="parameters-and-presentations.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb67-2"><a href="parameters-and-presentations.html#cb67-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb67-3"><a href="parameters-and-presentations.html#cb67-3" aria-hidden="true" tabindex="-1"></a>data_params <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> day, <span class="at">y =</span> deaths)) <span class="sc">+</span></span>
@@ -274,7 +310,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb67-6"><a href="parameters-and-presentations.html#cb67-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;COVID-19 cases in September in 2021 in The Netherlands&quot;</span>, </span>
 <span id="cb67-7"><a href="parameters-and-presentations.html#cb67-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Number of COVID-19 related deaths&quot;</span>, </span>
 <span id="cb67-8"><a href="parameters-and-presentations.html#cb67-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Day in September&quot;</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
 <p>We’ve now plotted two graphs. In the first graph we can see the COVID-19 cases in September in 2021 in The Netherlands. We can see that the cases are decreasing, but when we look at the COVID-19 related deaths we see that there’s no increasing or decreasing.</p>
 
 </div>
@@ -284,8 +320,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="relational-databases.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="relational-databases.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rpackage-lamyflow.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

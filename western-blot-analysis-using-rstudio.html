@@ -23,7 +23,7 @@
 <meta name="author" content="Lamyae el Mahboud" />
 
 
-<meta name="date" content="2023-05-30" />
+<meta name="date" content="2023-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -123,6 +123,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -164,16 +186,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
 <li class="chapter" data-level="5.2" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#planning"><i class="fa fa-check"></i><b>5.2</b> planning</a></li>
+<li class="chapter" data-level="5.3" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#gel-analysis-and-r"><i class="fa fa-check"></i><b>5.3</b> Gel analysis and R</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="relational-databases.html"><a href="relational-databases.html"><i class="fa fa-check"></i><b>6</b> Relational databases</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="relational-databases.html"><a href="relational-databases.html#why-using-relational-databses"><i class="fa fa-check"></i><b>6.1</b> Why using relational databses</a></li>
+<li class="chapter" data-level="6.1" data-path="relational-databases.html"><a href="relational-databases.html#why-using-relational-databases"><i class="fa fa-check"></i><b>6.1</b> Why using relational databases?</a></li>
 <li class="chapter" data-level="6.2" data-path="relational-databases.html"><a href="relational-databases.html#the-database"><i class="fa fa-check"></i><b>6.2</b> The database</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="parameters-and-presentations.html"><a href="parameters-and-presentations.html"><i class="fa fa-check"></i><b>7</b> Parameters and Presentations</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="parameters-and-presentations.html"><a href="parameters-and-presentations.html#why-using-parameters"><i class="fa fa-check"></i><b>7.1</b> Why using parameters?</a></li>
 <li class="chapter" data-level="7.2" data-path="parameters-and-presentations.html"><a href="parameters-and-presentations.html#the-report"><i class="fa fa-check"></i><b>7.2</b> The report</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html"><i class="fa fa-check"></i><b>8</b> Rpackage: lamyflow</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#why-building-this-rpackage"><i class="fa fa-check"></i><b>8.1</b> Why building this Rpackage?</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="antimicrobial-resistance-amr.html"><a href="antimicrobial-resistance-amr.html"><i class="fa fa-check"></i><b>9</b> Antimicrobial resistance (AMR)</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="antimicrobial-resistance-amr.html"><a href="antimicrobial-resistance-amr.html#introduction-4"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>10</b> Resources</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="resources.html"><a href="resources.html#youtube-resources"><i class="fa fa-check"></i><b>10.1</b> Youtube resources</a></li>
+<li class="chapter" data-level="10.2" data-path="resources.html"><a href="resources.html#references"><i class="fa fa-check"></i><b>10.2</b> References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -199,20 +235,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">5</span> Western Blot analysis using Rstudio<a href="western-blot-analysis-using-rstudio.html#western-blot-analysis-using-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="introduction-3" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Introduction<a href="western-blot-analysis-using-rstudio.html#introduction-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Western Blotting (WB) is a commonly used method in the biological scienes. This technique is used to investigate many features of the protein, ranging from basic protein analysis to disease detection such as cancer and HIV (<a href="https://www.future-science.com/doi/10.2144/btn-2022-0003" class="uri">https://www.future-science.com/doi/10.2144/btn-2022-0003</a>). Western Blotting involves three components to achieve this goal: (1) separating based on size, (2) transferring onto a solid surface, and (3) labeling the protein of interest with specific primary and secondary antibodies for visualization (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3456489/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3456489/</a>). This results in a gel full of different proteins separated by size. ImageJ is often used to analyze the Western Blot results. A lane is</p>
-<p>The technique is highly sensitive and can be used to detect even small amounts of protein. It is often used in research into diseases such as cancer and HIV, where specific proteins can be used as markers for diagnosis and treatment.
+<p>Western Blotting (WB) is a commonly used method in the biological scienes. This technique is used to investigate many features of the protein, ranging from basic protein analysis to disease detection such as cancer and HIV<span class="citation">(<a href="#ref-begumWesternBlottingPowerful2022" role="doc-biblioref">Begum, Murugesan, and Tangutur 2022</a>)</span>. Western Blotting involves three components to achieve this goal: (1) separating based on size, (2) transferring onto a solid surface, and (3) labeling the protein of interest with specific primary and secondary antibodies for visualization<span class="citation">(<a href="#ref-mahmoodWesternBlotTechnique2012" role="doc-biblioref">Mahmood and Yang 2012</a>)</span>. This results in a gel full of different proteins separated by size. Image J is often used to analyze the Western Blot results.
+The technique is highly sensitive and can be used to detect even small amounts of protein. It is often used in research into diseases such as cancer and HIV, where specific proteins can be used as markers for diagnosis and treatment.
 The next skill im gonna learn is to analyse Western Blots using Rstudio.</p>
 </div>
 <div id="planning" class="section level2 hasAnchor" number="5.2">
 <h2><span class="header-section-number">5.2</span> planning<a href="western-blot-analysis-using-rstudio.html#planning" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The first thing i need to do is to read about Western blot analysis in Rstudio. I need to look if people made packages and if they succeed. Most of the Western Blot analysis is done with ImageJ, which makes my search for Rcodes a bit difficultier.</p>
+<p>The first thing I need to do is to read about Western blot analysis in Rstudio. We need to look if people made packages that will help us analyzing the gels and if they succeed. Most of the Western Blot analysis is done with Image J, which makes my search for R codes a bit difficultier.</p>
 <ul>
-<li><p>Find articles about photo analysis and Western blot analysis in Rstudio.</p></li>
-<li><p>Look for codes that analysist used for Western Blot results.</p></li>
-<li><p>Try codes on Western blot photo’s.</p></li>
-<li></li>
+<li>Find articles about photo analysis and Western blot analysis in Rstudio.</li>
+<li>Look for a way to obtain data about the pixels of photos.</li>
+<li>Try to run the code in the previous step on western blot gels.</li>
+<li>Visualize the data</li>
 </ul>
+</div>
+<div id="gel-analysis-and-r" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Gel analysis and R<a href="western-blot-analysis-using-rstudio.html#gel-analysis-and-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Not many people have used R to analysis their Western Blot gels. Most of the gel analysis are done with Image J or Python. The reason for that is because R is mostly used for statistical analytics, while Python has multiple purposes. For example data analysis or machine learning.</p>
+<p>Even though it was hard to find articles that contain both objects, I found some packages and that might help me reach my goal.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-begumWesternBlottingPowerful2022" class="csl-entry">
+Begum, Habeebunnisa, Periyasamy Murugesan, and Anjana Devi Tangutur. 2022. <span>“Western Blotting: A Powerful Staple in Scientific and Biomedical Research.”</span> <em>BioTechniques</em> 73 (1): 58–69. <a href="https://doi.org/10.2144/btn-2022-0003">https://doi.org/10.2144/btn-2022-0003</a>.
+</div>
+<div id="ref-mahmoodWesternBlotTechnique2012" class="csl-entry">
+Mahmood, Tahrin, and Ping-Chang Yang. 2012. <span>“Western Blot: Technique, Theory, and Trouble Shooting.”</span> <em>North American Journal of Medical Sciences</em> 4 (9): 429–34. <a href="https://doi.org/10.4103/1947-2714.100998">https://doi.org/10.4103/1947-2714.100998</a>.
 </div>
 </div>
             </section>

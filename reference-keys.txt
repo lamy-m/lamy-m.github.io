@@ -1,4 +1,4 @@
-tab:unnamed-chunk-3
+tab:unnamed-chunk-2
 my-portfolio
 introduction
 my-curriculum-vitae
@@ -14,9 +14,17 @@ why-organizing-data
 western-blot-analysis-using-rstudio
 introduction-3
 planning
+gel-analysis-and-r
 relational-databases
-why-using-relational-databses
+why-using-relational-databases
 the-database
 parameters-and-presentations
 why-using-parameters
 the-report
+rpackage-lamyflow
+why-building-this-rpackage
+antimicrobial-resistance-amr
+introduction-4
+resources
+youtube-resources
+references

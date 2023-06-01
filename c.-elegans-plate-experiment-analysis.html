@@ -23,7 +23,7 @@
 <meta name="author" content="Lamyae el Mahboud" />
 
 
-<meta name="date" content="2023-05-30" />
+<meta name="date" content="2023-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -123,6 +123,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -164,16 +186,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="5.1" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
 <li class="chapter" data-level="5.2" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#planning"><i class="fa fa-check"></i><b>5.2</b> planning</a></li>
+<li class="chapter" data-level="5.3" data-path="western-blot-analysis-using-rstudio.html"><a href="western-blot-analysis-using-rstudio.html#gel-analysis-and-r"><i class="fa fa-check"></i><b>5.3</b> Gel analysis and R</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="relational-databases.html"><a href="relational-databases.html"><i class="fa fa-check"></i><b>6</b> Relational databases</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="relational-databases.html"><a href="relational-databases.html#why-using-relational-databses"><i class="fa fa-check"></i><b>6.1</b> Why using relational databses</a></li>
+<li class="chapter" data-level="6.1" data-path="relational-databases.html"><a href="relational-databases.html#why-using-relational-databases"><i class="fa fa-check"></i><b>6.1</b> Why using relational databases?</a></li>
 <li class="chapter" data-level="6.2" data-path="relational-databases.html"><a href="relational-databases.html#the-database"><i class="fa fa-check"></i><b>6.2</b> The database</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="parameters-and-presentations.html"><a href="parameters-and-presentations.html"><i class="fa fa-check"></i><b>7</b> Parameters and Presentations</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="parameters-and-presentations.html"><a href="parameters-and-presentations.html#why-using-parameters"><i class="fa fa-check"></i><b>7.1</b> Why using parameters?</a></li>
 <li class="chapter" data-level="7.2" data-path="parameters-and-presentations.html"><a href="parameters-and-presentations.html#the-report"><i class="fa fa-check"></i><b>7.2</b> The report</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html"><i class="fa fa-check"></i><b>8</b> Rpackage: lamyflow</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#why-building-this-rpackage"><i class="fa fa-check"></i><b>8.1</b> Why building this Rpackage?</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="antimicrobial-resistance-amr.html"><a href="antimicrobial-resistance-amr.html"><i class="fa fa-check"></i><b>9</b> Antimicrobial resistance (AMR)</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="antimicrobial-resistance-amr.html"><a href="antimicrobial-resistance-amr.html#introduction-4"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="resources.html"><a href="resources.html"><i class="fa fa-check"></i><b>10</b> Resources</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="resources.html"><a href="resources.html#youtube-resources"><i class="fa fa-check"></i><b>10.1</b> Youtube resources</a></li>
+<li class="chapter" data-level="10.2" data-path="resources.html"><a href="resources.html#references"><i class="fa fa-check"></i><b>10.2</b> References</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -257,7 +293,7 @@ The colomn ‘compConcentration’ is a “chr” type, this is not correct sinc
 <span id="cb6-2"><a href="c.-elegans-plate-experiment-analysis.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="c.-elegans-plate-experiment-analysis.html#cb6-3" aria-hidden="true" tabindex="-1"></a>data_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(data)</span>
 <span id="cb6-4"><a href="c.-elegans-plate-experiment-analysis.html#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="c.-elegans-plate-experiment-analysis.html#cb6-5" aria-hidden="true" tabindex="-1"></a>controlnegative_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(data_df<span class="sc">$</span>RawData[data_df<span class="sc">$</span>compVehicle <span class="sc">==</span> <span class="st">&quot;controlNegative&quot;</span>]) <span class="co">#calculate mean of the control negative</span></span>
+<span id="cb6-5"><a href="c.-elegans-plate-experiment-analysis.html#cb6-5" aria-hidden="true" tabindex="-1"></a>controlnegative_mean <span class="ot">&lt;-</span> <span class="fu">mean</span>(data_df<span class="sc">$</span>RawData[data_df<span class="sc">$</span>expType <span class="sc">==</span> <span class="st">&quot;controlNegative&quot;</span>]) <span class="co">#calculate mean of the control negative</span></span>
 <span id="cb6-6"><a href="c.-elegans-plate-experiment-analysis.html#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-7"><a href="c.-elegans-plate-experiment-analysis.html#cb6-7" aria-hidden="true" tabindex="-1"></a>data_df<span class="sc">$</span>data_norm <span class="ot">&lt;-</span> data_df<span class="sc">$</span>RawData<span class="sc">/</span>controlnegative_mean</span>
 <span id="cb6-8"><a href="c.-elegans-plate-experiment-analysis.html#cb6-8" aria-hidden="true" tabindex="-1"></a>  </span>
