@@ -15,6 +15,9 @@ western-blot-analysis-using-rstudio
 introduction-3
 planning
 gel-analysis-and-r
+installation
+getting-started
+obtaining-data
 relational-databases
 why-using-relational-databases
 the-database
@@ -28,3 +31,8 @@ introduction-4
 resources
 youtube-resources
 references
+plotting-the-image
+plotting-the-image-and-learning-more-about-imager
+images-and-data-frames
+working-with-the-created-dataframe
+the-final-product
