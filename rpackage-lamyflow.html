@@ -216,10 +216,11 @@ div.csl-indent {
 <li class="chapter" data-level="8" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html"><i class="fa fa-check"></i><b>8</b> Rpackage: lamyflow</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#why-building-this-rpackage"><i class="fa fa-check"></i><b>8.1</b> Why building this Rpackage?</a></li>
-<li class="chapter" data-level="8.2" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#instalation"><i class="fa fa-check"></i><b>8.2</b> Instalation</a></li>
+<li class="chapter" data-level="8.2" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#installation-1"><i class="fa fa-check"></i><b>8.2</b> Installation</a></li>
 <li class="chapter" data-level="8.3" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#vignette"><i class="fa fa-check"></i><b>8.3</b> vignette</a></li>
 <li class="chapter" data-level="8.4" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#datasets"><i class="fa fa-check"></i><b>8.4</b> Datasets</a></li>
 <li class="chapter" data-level="8.5" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#functions"><i class="fa fa-check"></i><b>8.5</b> Functions</a></li>
+<li class="chapter" data-level="8.6" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#github-repository"><i class="fa fa-check"></i><b>8.6</b> Github repository</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="antimicrobial-resistance-amr.html"><a href="antimicrobial-resistance-amr.html"><i class="fa fa-check"></i><b>9</b> Antimicrobial resistance (AMR)</a>
 <ul>
@@ -254,26 +255,26 @@ div.csl-indent {
 <h1><span class="header-section-number">8</span> Rpackage: lamyflow<a href="rpackage-lamyflow.html#rpackage-lamyflow" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="why-building-this-rpackage" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Why building this Rpackage?<a href="rpackage-lamyflow.html#why-building-this-rpackage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We’re almost at the end of this portfolio, and we’ve seen a lot of datasets, codes, functions etc. The reproduce this portfolio alot easier I’ve created this Rpackage called lamyflow.</p>
+<p>We’re almost at the end of this portfolio, and we’ve seen a lot of datasets, codes, functions etc. To reproduce this portfolio alot easier I’ve created this Rpackage called lamyflow.</p>
 </div>
-<div id="instalation" class="section level2 hasAnchor" number="8.2">
-<h2><span class="header-section-number">8.2</span> Instalation<a href="rpackage-lamyflow.html#instalation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="installation-1" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Installation<a href="rpackage-lamyflow.html#installation-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The package “lamyflow” needs to be installed as following:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="rpackage-lamyflow.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
-<span id="cb2-2"><a href="rpackage-lamyflow.html#cb2-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;lamy-m/lamyflow&quot;</span>, <span class="at">build_vignettes =</span> <span class="cn">TRUE</span>, <span class="at">force =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="rpackage-lamyflow.html#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)</span>
+<span id="cb122-2"><a href="rpackage-lamyflow.html#cb122-2" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;lamy-m/lamyflow&quot;</span>, <span class="at">build_vignettes =</span> <span class="cn">TRUE</span>, <span class="at">force =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>After installation the package can be called as following:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="rpackage-lamyflow.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lamyflow)</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="rpackage-lamyflow.html#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lamyflow)</span></code></pre></div>
 </div>
 <div id="vignette" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> vignette<a href="rpackage-lamyflow.html#vignette" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To know more about the package, go the vignette with the following code:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="rpackage-lamyflow.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">browseVignettes</span>(<span class="st">&quot;lamyflow&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="rpackage-lamyflow.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">browseVignettes</span>(<span class="st">&quot;lamyflow&quot;</span>)</span></code></pre></div>
 </div>
 <div id="datasets" class="section level2 hasAnchor" number="8.4">
 <h2><span class="header-section-number">8.4</span> Datasets<a href="rpackage-lamyflow.html#datasets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This package contains four datasets. To load in the wanted datasets use the function <code>{data}</code>. The following datasets are available.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="rpackage-lamyflow.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#show the first 10 rows of the datasets</span></span>
-<span id="cb5-2"><a href="rpackage-lamyflow.html#cb5-2" aria-hidden="true" tabindex="-1"></a>Celegans <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="rpackage-lamyflow.html#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="co">#show the first 10 rows of the datasets</span></span>
+<span id="cb125-2"><a href="rpackage-lamyflow.html#cb125-2" aria-hidden="true" tabindex="-1"></a>Celegans <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 5 × 34
 ##   plateRow plateColumn vialNr dropCode expType    expReplicate expName        
 ##   &lt;lgl&gt;    &lt;lgl&gt;        &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;          
@@ -289,14 +290,14 @@ div.csl-indent {
 ## #   elegansInput &lt;dbl&gt;, bacterialStrain &lt;chr&gt;, bacterialTreatment &lt;chr&gt;,
 ## #   bacterialOD600 &lt;dbl&gt;, bacterialConcX &lt;dbl&gt;, bacterialVolume &lt;dbl&gt;,
 ## #   bacterialVolUnit &lt;chr&gt;, incubationVial &lt;chr&gt;, incubationVolume &lt;dbl&gt;, …</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="rpackage-lamyflow.html#cb7-1" aria-hidden="true" tabindex="-1"></a>dengue <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="rpackage-lamyflow.html#cb127-1" aria-hidden="true" tabindex="-1"></a>dengue <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##   X year month day   country dengue_cases
 ## 1 1 2002    12  29 Argentina           NA
 ## 2 2 2002    12  29   Bolivia        0.101
 ## 3 3 2002    12  29    Brazil        0.073
 ## 4 4 2002    12  29     India        0.062
 ## 5 5 2002    12  29 Indonesia        0.101</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="rpackage-lamyflow.html#cb9-1" aria-hidden="true" tabindex="-1"></a>edcc_data <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="rpackage-lamyflow.html#cb129-1" aria-hidden="true" tabindex="-1"></a>edcc_data <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##      dateRep day month year cases deaths countriesAndTerritories geoId
 ## 1 23/10/2022  23    10 2022  3557      0                 Austria    AT
 ## 2 22/10/2022  22    10 2022  5494      4                 Austria    AT
@@ -309,7 +310,7 @@ div.csl-indent {
 ## 3                  AUT     8901064       Europe
 ## 4                  AUT     8901064       Europe
 ## 5                  AUT     8901064       Europe</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="rpackage-lamyflow.html#cb11-1" aria-hidden="true" tabindex="-1"></a>flu <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="rpackage-lamyflow.html#cb131-1" aria-hidden="true" tabindex="-1"></a>flu <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##   X year month day   country flu_cases
 ## 1 1 2002    12  29 Argentina        NA
 ## 2 2 2002    12  29 Australia        NA
@@ -317,7 +318,7 @@ div.csl-indent {
 ## 4 4 2002    12  29   Belgium        NA
 ## 5 5 2002    12  29   Bolivia        NA</code></pre>
 <p>To know more about the datasets, use <code>?</code></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="rpackage-lamyflow.html#cb13-1" aria-hidden="true" tabindex="-1"></a>?Celegans</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="rpackage-lamyflow.html#cb133-1" aria-hidden="true" tabindex="-1"></a>?Celegans</span></code></pre></div>
 </div>
 <div id="functions" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">8.5</span> Functions<a href="rpackage-lamyflow.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -333,7 +334,11 @@ Gets info about a dataset</li>
 calculates Q-value</li>
 </ul>
 <p>To know more about the functions, use <code>?</code></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="rpackage-lamyflow.html#cb14-1" aria-hidden="true" tabindex="-1"></a>?<span class="fu">Celegans_norm</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="rpackage-lamyflow.html#cb134-1" aria-hidden="true" tabindex="-1"></a>?<span class="fu">Celegans_norm</span>()</span></code></pre></div>
+</div>
+<div id="github-repository" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> Github repository<a href="rpackage-lamyflow.html#github-repository" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To find more about this package. Go to the Github repositry <a href="https://github.com/lamy-m/lamyflow">here</a></p>
 
 </div>
 </div>

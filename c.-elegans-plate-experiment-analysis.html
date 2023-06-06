@@ -23,7 +23,7 @@
 <meta name="author" content="Lamyae el Mahboud" />
 
 
-<meta name="date" content="2023-06-04" />
+<meta name="date" content="2023-06-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -216,6 +216,11 @@ div.csl-indent {
 <li class="chapter" data-level="8" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html"><i class="fa fa-check"></i><b>8</b> Rpackage: lamyflow</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#why-building-this-rpackage"><i class="fa fa-check"></i><b>8.1</b> Why building this Rpackage?</a></li>
+<li class="chapter" data-level="8.2" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#installation-1"><i class="fa fa-check"></i><b>8.2</b> Installation</a></li>
+<li class="chapter" data-level="8.3" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#vignette"><i class="fa fa-check"></i><b>8.3</b> vignette</a></li>
+<li class="chapter" data-level="8.4" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#datasets"><i class="fa fa-check"></i><b>8.4</b> Datasets</a></li>
+<li class="chapter" data-level="8.5" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#functions"><i class="fa fa-check"></i><b>8.5</b> Functions</a></li>
+<li class="chapter" data-level="8.6" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#github-repository"><i class="fa fa-check"></i><b>8.6</b> Github repository</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="antimicrobial-resistance-amr.html"><a href="antimicrobial-resistance-amr.html"><i class="fa fa-check"></i><b>9</b> Antimicrobial resistance (AMR)</a>
 <ul>
@@ -250,10 +255,10 @@ div.csl-indent {
 <h1><span class="header-section-number">2</span> C. elegans plate experiment analysis<a href="c.-elegans-plate-experiment-analysis.html#c.-elegans-plate-experiment-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="introduction-1" class="section level2 hasAnchor" number="2.1">
 <h2><span class="header-section-number">2.1</span> Introduction<a href="c.-elegans-plate-experiment-analysis.html#introduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this analyse we will read and analyze a data file. While analyzing the data file, we come across a few issues we try to fix. The data we’re gonna use in this exercise was obtained from an experiment in which adult C.elegans were exposed to varying concentrations of different compounds. The variables RawData (the outcome - number of offspring counted as an integer value, after incubation time), compName (the generic name of the compound/chemical), the compConcentration (the concentration of the compound), and the expType are the most important variables in this dataset.</p>
+<p>In this analyse we’ll read and analyze a data file. While analyzing the data file, we come across a few issues we try to fix. The data we’re gonna use in this exercise was obtained from an experiment in which adult C.elegans were exposed to varying concentrations of different compounds. The variables RawData (the outcome - number of offspring counted as an integer value, after incubation time), compName (the generic name of the compound/chemical), the compConcentration (the concentration of the compound), and the expType are the most important variables in this dataset.</p>
 <p>After we reviewed the Excel File. We see in the Excel file that there is no data in the colomns ‘plateRow’ en ‘plateColmn’.
 Some colomns are not necessary like ‘expDate’, ‘expResearcher’, ‘expTime’, ‘éxpUnit’. This kind of information is metadata and should not be in your raw data file. It makes the table cluttered and information less easy to find.
-Some data in colomn is the same for all coditions, like ‘compDelivery’ and ‘bacterialStrain’. This kind of information could be mentioned in your metadata to make your datafile more readable and less chaotic.</p>
+Some data in some colomns are the same for all conditions, like ‘compDelivery’ and ‘bacterialStrain’. This kind of information could be mentioned in your metadata to make your data file more readable and less chaotic.</p>
 <p>after reviewing the file we want to open the excel file in R using the <code>{readxl}</code> package.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="c.-elegans-plate-experiment-analysis.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#load in tidyverse package</span></span>
 <span id="cb1-2"><a href="c.-elegans-plate-experiment-analysis.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl) <span class="co">#load in readxl package </span></span>
@@ -273,8 +278,7 @@ Some data in colomn is the same for all coditions, like ‘compDelivery’ and �
 <p>The colomn ‘Rawdata’ is a <code>dbl</code> type colomn, this is what we expected.
 The colomn ‘compName’ is a “chr” type, this is what we expected .
 The colomn ‘compConcentration’ is a “chr” type, this is not correct since they are only numbers in the colomn.</p>
-<p>We’re gonna make a scatterplot of the dataset
-. As you can see in the code below we put the “compConcentration” on the x-axis, the “Rawdata” counts on the y-axis. For each level in “compName” we assign a colour and for each level in “expType” we assign a different symbol.</p>
+<p>We’re gonna make a scatterplot of the dataset. As you can see in the code below we put the “compConcentration” on the x-axis, the “Rawdata” counts on the y-axis. For each level in “compName” we assign a colour and for each level in “expType” we assign a different symbol.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="c.-elegans-plate-experiment-analysis.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co">#load in the tidyverse data</span></span>
 <span id="cb4-2"><a href="c.-elegans-plate-experiment-analysis.html#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="c.-elegans-plate-experiment-analysis.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> data, <span class="fu">aes</span>(<span class="at">x =</span> compConcentration, <span class="at">y =</span> RawData )) <span class="sc">+</span></span>
@@ -285,7 +289,7 @@ The colomn ‘compConcentration’ is a “chr” type, this is not correct sinc
 <span id="cb4-8"><a href="c.-elegans-plate-experiment-analysis.html#cb4-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;compConcentration(nM)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb4-9"><a href="c.-elegans-plate-experiment-analysis.html#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="co">#scatterplot for the different compounds and the varying concentrations in nM</span></span></code></pre></div>
 <p><img src="_main_files/figure-html/wrongplot-1.png" width="672" /></p>
-<p>We just made a scatterplot with the data from the excel file we imported earlier. Each compName has its own colour and each expType has its own shape, but we see one big problem. As we can see is the x-axis not very readable, actually not at all!</p>
+<p>We just made a scatterplot with the data from the excel file we imported earlier. Each compName has its own color and each expType has its own shape, but we see one big problem. As we can see is the x-axis not very readable, actually not at all!</p>
 <p>when we imported the Excel file, the colomn ‘compConcentration’ had a charachter type. Because of this every single charachter in each cell was shown on the x-axis and the numbers weren’t rounded. This explains why the x-axis wasn’t readable.</p>
 <p>To correct this mistake, we’re gonna change the type of the colomn “compConcentration” from “chr” to “dbl”.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="c.-elegans-plate-experiment-analysis.html#cb5-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>compConcentration <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(data<span class="sc">$</span>compConcentration) <span class="co">#change the type of the colomn from &lt;chr&gt; to &lt;dbl&gt;</span></span>
@@ -303,7 +307,7 @@ The colomn ‘compConcentration’ is a “chr” type, this is not correct sinc
 <p><img src="_main_files/figure-html/fixingplot-1.png" width="672" /></p>
 <p>As we van see the x-axis is now readable.</p>
 <p>We see in the scatterplot that the positive control for this experiments is Ethanol. The negative control for this experiment is S-medium.</p>
-<p>if we really want to compare the different between the compund and experiments type. We need to normalize the data for the Negative control. We normalize the data by setting the mean value for the “controlNegative” to 1. All the other values are expressed as a fraction thereof.</p>
+<p>if we really want to compare the different between the compound and experiments type. We need to normalize the data for the Negative control. We normalize the data by setting the mean value for the “controlNegative” to 1. All the other values are expressed as a fraction thereof.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="c.-elegans-plate-experiment-analysis.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb6-2"><a href="c.-elegans-plate-experiment-analysis.html#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="c.-elegans-plate-experiment-analysis.html#cb6-3" aria-hidden="true" tabindex="-1"></a>data_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(data)</span>
@@ -321,7 +325,7 @@ The colomn ‘compConcentration’ is a “chr” type, this is not correct sinc
 <span id="cb6-15"><a href="c.-elegans-plate-experiment-analysis.html#cb6-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;compConcentration(nM)&quot;</span>) <span class="sc">+</span></span>
 <span id="cb6-16"><a href="c.-elegans-plate-experiment-analysis.html#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="co">#scatterplot of the data with fixed x-axis and jitter</span></span></code></pre></div>
 <p><img src="_main_files/figure-html/fixedplot-1.png" width="672" /></p>
-<p>When we look at the scatterplot we just made, we can that napthalene gets lower when we rise the concentrtion. The same happends with decane and 2,6-diisopropylnaphthalene. To draw a conclusion we need to conduct further analysis.</p>
+<p>When we look at the scatterplot we just made, we can that naphthalene gets lower when we rise the concentration. The same happens with decane and 2,6-diisopropylnaphthalene. To draw a conclusion we need to conduct further analysis.</p>
 </div>
 <div id="analyzing-plan" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> analyzing plan<a href="c.-elegans-plate-experiment-analysis.html#analyzing-plan" class="anchor-section" aria-label="Anchor link to header"></a></h2>

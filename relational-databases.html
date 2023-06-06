@@ -23,7 +23,7 @@
 <meta name="author" content="Lamyae el Mahboud" />
 
 
-<meta name="date" content="2023-06-04" />
+<meta name="date" content="2023-06-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -216,6 +216,11 @@ div.csl-indent {
 <li class="chapter" data-level="8" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html"><i class="fa fa-check"></i><b>8</b> Rpackage: lamyflow</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#why-building-this-rpackage"><i class="fa fa-check"></i><b>8.1</b> Why building this Rpackage?</a></li>
+<li class="chapter" data-level="8.2" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#installation-1"><i class="fa fa-check"></i><b>8.2</b> Installation</a></li>
+<li class="chapter" data-level="8.3" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#vignette"><i class="fa fa-check"></i><b>8.3</b> vignette</a></li>
+<li class="chapter" data-level="8.4" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#datasets"><i class="fa fa-check"></i><b>8.4</b> Datasets</a></li>
+<li class="chapter" data-level="8.5" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#functions"><i class="fa fa-check"></i><b>8.5</b> Functions</a></li>
+<li class="chapter" data-level="8.6" data-path="rpackage-lamyflow.html"><a href="rpackage-lamyflow.html#github-repository"><i class="fa fa-check"></i><b>8.6</b> Github repository</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="antimicrobial-resistance-amr.html"><a href="antimicrobial-resistance-amr.html"><i class="fa fa-check"></i><b>9</b> Antimicrobial resistance (AMR)</a>
 <ul>
@@ -377,7 +382,7 @@ div.csl-indent {
 ## 5   20619075 108322326649  Americas   South America
 ## 6    1867396           NA      Asia    Western Asia</code></pre>
 <p>All three datasets are now tidy. Each row contains their own observation.</p>
-<p>If we compare the colomn type of the flu and dengue dataset, we can see some difference in these datasets. The colomns ‘year’ and ‘country’ dont have the same variables and data type as the gapminder dataset. We need to change these colomn so they match with each other.</p>
+<p>If we compare the colomn type of the flu and dengue dataset, we can see some difference in these datasets. The colomns ‘year’ and ‘country’ don’t have the same variables and data type as the gapminder dataset. We need to change these colomn so they match with each other.</p>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="relational-databases.html#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb80-2"><a href="relational-databases.html#cb80-2" aria-hidden="true" tabindex="-1"></a>dengue_tidy<span class="sc">$</span>country <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(dengue_tidy<span class="sc">$</span>country) <span class="co">#transform data type to factor</span></span>
 <span id="cb80-3"><a href="relational-databases.html#cb80-3" aria-hidden="true" tabindex="-1"></a>dengue_tidy <span class="ot">&lt;-</span> dengue_tidy <span class="sc">%&gt;%</span> <span class="fu">separate</span>(Date, <span class="at">into =</span> <span class="fu">c</span>(<span class="st">&quot;year&quot;</span>, <span class="st">&quot;month&quot;</span>, <span class="st">&quot;day&quot;</span>), <span class="at">convert =</span> T, <span class="at">sep =</span> <span class="st">&quot;-&quot;</span>) <span class="co">#separate &#39;date&#39; into &#39;year&#39;, &#39;month&#39; and &#39;day&#39;</span></span>
@@ -585,7 +590,7 @@ div.csl-indent {
 <span id="cb111-9"><a href="relational-databases.html#cb111-9" aria-hidden="true" tabindex="-1"></a>  gapminder_data, dengue_tidy, </span>
 <span id="cb111-10"><a href="relational-databases.html#cb111-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;country&quot;</span>, <span class="st">&quot;year&quot;</span>)</span>
 <span id="cb111-11"><a href="relational-databases.html#cb111-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<p>Now we’ve joined the three different datasets in four different ways. We’ve inner joined the flu with the dengue dataset, and the gapminder with the flu and dnegue dataset. We’ve also left joined the gapminder with the flu dataset and the gapminder with the dengue dataset. The meanings of these joins can be found <a href="https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-joins/">here</a></p>
+<p>Now we’ve joined the three different datasets in four different ways. We’ve inner joined the flu with the dengue dataset, and the gapminder with the flu and dengue dataset. We’ve also left joined the gapminder with the flu dataset and the gapminder with the dengue dataset. The meanings of these joins can be found <a href="https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-joins/">here</a>.</p>
 <div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="relational-databases.html#cb112-1" aria-hidden="true" tabindex="-1"></a>gapminder_dengue_flu <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
 <span id="cb112-2"><a href="relational-databases.html#cb112-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, </span>
 <span id="cb112-3"><a href="relational-databases.html#cb112-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">y =</span> flu_cases,</span>
@@ -600,6 +605,7 @@ div.csl-indent {
 <span id="cb112-12"><a href="relational-databases.html#cb112-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;flu cases&quot;</span></span>
 <span id="cb112-13"><a href="relational-databases.html#cb112-13" aria-hidden="true" tabindex="-1"></a>       )</span></code></pre></div>
 <p><img src="_main_files/figure-html/flu%20cases-1.png" width="672" /></p>
+<p>As we can see, Mexico has the most flu cases</p>
 <div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="relational-databases.html#cb113-1" aria-hidden="true" tabindex="-1"></a>gapminder_dengue_flu <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>() <span class="sc">+</span> </span>
 <span id="cb113-2"><a href="relational-databases.html#cb113-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> country, </span>
 <span id="cb113-3"><a href="relational-databases.html#cb113-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">y =</span> dengue_cases,</span>
@@ -614,6 +620,7 @@ div.csl-indent {
 <span id="cb113-12"><a href="relational-databases.html#cb113-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;dengue cases&quot;</span></span>
 <span id="cb113-13"><a href="relational-databases.html#cb113-13" aria-hidden="true" tabindex="-1"></a>       )</span></code></pre></div>
 <p><img src="_main_files/figure-html/dengue%20cases-1.png" width="672" /></p>
+<p>When we look at dengue cases, Bolivia has the least.</p>
 <div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="relational-databases.html#cb114-1" aria-hidden="true" tabindex="-1"></a>flu_dengue_2003 <span class="ot">&lt;-</span> flu_dengue <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year<span class="sc">==</span><span class="dv">2003</span>)</span>
 <span id="cb114-2"><a href="relational-databases.html#cb114-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb114-3"><a href="relational-databases.html#cb114-3" aria-hidden="true" tabindex="-1"></a>correlation<span class="ot">&lt;-</span><span class="fu">cor.test</span>(flu_dengue_2003<span class="sc">$</span>flu_cases, flu_dengue_2003<span class="sc">$</span>dengue_cases, <span class="at">method=</span><span class="fu">c</span>(<span class="st">&quot;pearson&quot;</span>))<span class="sc">$</span>estimate <span class="sc">%&gt;%</span></span>
@@ -629,6 +636,7 @@ div.csl-indent {
 <span id="cb114-13"><a href="relational-databases.html#cb114-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;flu cases&quot;</span>) <span class="sc">+</span></span>
 <span id="cb114-14"><a href="relational-databases.html#cb114-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
 <p><img src="_main_files/figure-html/scatterplot%20flu%20dengue-1.png" width="672" /></p>
+<p>We just made a scatterplot with he dengue and flu cases. Unfortunately, there is no relation between the dengue cases and the flu cases.</p>
 
 </div>
 </div>

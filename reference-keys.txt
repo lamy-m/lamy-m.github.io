@@ -32,12 +32,13 @@ why-using-parameters
 the-report
 rpackage-lamyflow
 why-building-this-rpackage
+installation-1
+vignette
+datasets
+functions
+github-repository
 antimicrobial-resistance-amr
 introduction-4
 resources
 youtube-resources
 references
-instalation
-vignette
-datasets
-functions
