@@ -18,6 +18,12 @@ gel-analysis-and-r
 installation
 getting-started
 obtaining-data
+plotting-the-image-and-learning-more-about-imager
+working-with-the-dataframe-and-plotting
+a-better-analyse
+obtaining-the-data
+step-3-plotting-the-data
+conclusion
 relational-databases
 why-using-relational-databases
 the-database
@@ -31,8 +37,7 @@ introduction-4
 resources
 youtube-resources
 references
-plotting-the-image
-plotting-the-image-and-learning-more-about-imager
-images-and-data-frames
-working-with-the-created-dataframe
-the-final-product
+instalation
+vignette
+datasets
+functions
